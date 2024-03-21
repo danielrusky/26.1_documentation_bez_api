@@ -18,6 +18,7 @@ class Course(models.Model):
     image = models.ImageField(upload_to='materials/course/', verbose_name='картинка', **NULLABLE)
     description = models.TextField(verbose_name='описание', **NULLABLE)
     price = models.PositiveIntegerField(verbose_name='стоимость', **NULLABLE)
+    last_update = models.DateTimeField(verbose_name='последнее обновление', auto_now=True)
 
     def __str__(self):
         return f'{self.title}'
@@ -42,7 +43,7 @@ class Lesson(models.Model):
         verbose_name = 'урок'
         verbose_name_plural = 'уроки'
 
-
+###
 class Subscription(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='пользователь', **NULLABLE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='курс', **NULLABLE)
