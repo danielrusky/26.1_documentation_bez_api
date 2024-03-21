@@ -21,7 +21,7 @@ class PaymentSerializer(serializers.ModelSerializer):
     #             return 'У курса нет цены'
     #     else:
     #         return None
-
+#
     class Meta:
         model = Payment
         fields = '__all__'

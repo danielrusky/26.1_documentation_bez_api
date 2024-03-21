@@ -14,7 +14,7 @@ from materials.models import Course
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = User.objects.all()
-
+##
 
 class PaymentListAPIView(generics.ListAPIView):
     serializer_class = PaymentSerializer
